@@ -1,0 +1,39 @@
+<!-- file and folder path  -->
+<div class="file__folder-path-listing">
+    <div class="file__folder-path-list-container">
+            {% if ff_path_lists != [] %}
+                {% for path_list in ff_path_lists %}
+                    <span class="file__folder-path-name-text">{{ path_list }}</span>
+                    <span class="file_folder-path-name-separator"> > </span>
+                {% endfor %}
+            {% endif %}
+    </div>
+</div>
+
+<!-- file and folders lists -->
+<ul class="file__folder-parent">
+    {% if ff_lists != [] %}
+        {% for file in ff_lists %}
+            <li class="file__folder-lists">
+                <div class="file__folder-list-left">
+                    <span class="file_folder-name">{{ file[0] }}</span>
+                    <span class="file__folder-info">
+                        <span class="file__folder-created-time"> 
+                            <span class="file__folder-created-on-text"> Created on </span>
+                            <span class="file_folder-separator-space">-</span>
+                            <span class="file__folder-created-on-time">{{ file[1] }}</span>
+                        </span>
+                        <span class="file_folder-size"></span>
+                    </span>
+                </div>
+                <div class="file__folder-list-right icons">
+                    <div class="icons-child-container">
+                        <i class="fa fa-trash"></i>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    {% else %}
+            <li class="file__folder-lists empty"> Please add files to the folder </li>
+    {% endif %}
+</ul>

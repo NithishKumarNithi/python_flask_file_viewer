@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document displayer</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='font_awesome_4/css/font-awesome.css' )}}">
+</head>
+<body>
+    <div class="container">
+
+        <div class="main-display-left">
+            <div class="display-content-wrapper">
+            </div>
+        </div>
+        <div class="main-display-right">
+            <div class="settings-wrapper">
+                <div class="setting-container">
+                    <div class="setting-container-wrap">
+                        <div class="menu-icon-wrap">
+                            <div class="plus-icon-cover">
+                                <i class="fa fa-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   </div>
+   
+
+   <!-- scripts -->
+   <script src="{{ url_for('static',filename='scripts/posts.js') }}" ></script>
+    
+</body>
+</html>
