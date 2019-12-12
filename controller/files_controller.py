@@ -19,9 +19,7 @@ class FilesFolders():
         for fol in self.fol_paths.keys():
             self.ff_list_with_time.append([fol, self.fol_paths[fol][1]])
 
-        return self.ff_list_with_time
-
-        
+        return self.ff_list_with_time      
 
     def get_file_or_folder(self,folder=None):
         """ returns folder """
@@ -44,8 +42,6 @@ class FilesFolders():
         else:
             return 
     
-
-
     def folder_path_hierachy(self,folder=None):
         """ folder path hierachy  """    
         if self.get_file_or_folder(folder) == self.init_directory:
@@ -54,17 +50,7 @@ class FilesFolders():
             if self.fol_paths.get(folder):
                 path_arr = self.fol_paths.get(folder)[0][len(self.init_directory):].split('/')
                 path_arr[0] = "/"
-                return path_arr
-
-
-
-
-
-
-        
-        
-
-    
+                return path_arr    
 
 # ff = FilesFolders()
 # print(ff.init_file())

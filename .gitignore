@@ -1,0 +1,11 @@
+# ignoring python auto generated files
+
+__pycache__
+controller/__pycache__
+
+# ignoring unneccessary font awesome files
+
+static/font_awesome_4/fonts
+static/font_awesome_4/less
+static/font_awesome_4/scss
+static/font_awesome_4/HELP-US-OUT.txt

@@ -1,13 +1,22 @@
+/* host name */
+var host_url = window.location.origin;
+
+/* 
+    get the initial resource the browser start loading
+*/
+window.onload = function(){
+    getResources(host_url+'/home/lists');
+}
+
 /* 
     posts scripts for the application
 */
-
 function getResources(url){
     var httpxhr = new XMLHttpRequest();
     httpxhr.onload = function(){
         if(httpxhr.status == 200){
             appendToBody(httpxhr.response);
-            resourceFetch();
+            initiateResourceFunctions();
         }
         
     }
@@ -23,26 +32,39 @@ function appendToBody(chunk){
     wrapper.innerHTML = chunk;
 }
 
-/* 
-    get the initial resource the browser start loading
-*/
-window.onload = function(){
-    getResources('http://127.0.0.1:5000/home/lists');
-}
-
 /*
     get the selected name from event 
 */
 function resourceFetch(){
-    var file__folder_selection = document.querySelectorAll('.file__folder-list-left .file_folder-name'); // file folder selection in client
 
-    /* looping file folder selection */
-    file__folder_selection.forEach(function(ff){
+    /* 
+        returns resources object from the client
+    */
+    return resourceObj = {
+        'file__folder_selection' : document.querySelectorAll('.file__folder-list-left .file_folder-name'),
+        'path_hierachy_selection': document.querySelectorAll('.file__folder-path-name-text'),
+    }
+    
+}
+
+/*
+    initializes resources object
+*/
+
+function initiateResourceFunctions(){
+    var resourcesele = resourceFetch();
+    loopResourcesEleDom(resourcesele['file__folder_selection']);
+    loopResourcesEleDom(resourcesele['path_hierachy_selection']);
+}
+
+/*
+    looping through resources DOM
+*/
+function loopResourcesEleDom(resourceobj){
+    resourceobj.forEach(function(ff){
         ff.addEventListener('click',function(e){
             e.preventDefault();
-            getResources('http://127.0.0.1:5000/'+e.target.innerText);
+            getResources(host_url+'/'+e.target.innerText);
         });
     });
 }
-
-

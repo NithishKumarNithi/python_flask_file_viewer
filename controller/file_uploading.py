@@ -7,7 +7,7 @@ class FileUpload():
         self.allowed_files = ['txt','pdf','docx']
 
     def check_files(self,filename):
-        """ Check if file is allowed file type"""
+        """ Check if file is allowed file type """
         ext = filename.split('.')
         if ext[len(ext) - 1] in self.allowed_files:
             return True
@@ -18,6 +18,6 @@ class FileUpload():
     
 
 
-fu = FileUpload()
-print(fu.check_files('my.pdf'))
+# fu = FileUpload()
+# print(fu.check_files('my.pdf'))
 

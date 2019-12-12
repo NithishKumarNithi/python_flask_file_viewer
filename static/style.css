@@ -123,20 +123,9 @@ body{
     padding: 5px 10px;
     margin: 10px 0;
     min-width: 50px;
-    /* background: #fff; */
     position: relative;
+    cursor: pointer;
 }
-
-/* .file__folder-path-name-text:before{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -38px;
-    border-bottom: 14px solid transparent;
-    border-left: 18px solid #fff;
-    border-top: 14px solid transparent;
-    border-right: 20px solid transparent;
-} */
 
 .file_folder-path-name-separator{
     padding: 0 5px;

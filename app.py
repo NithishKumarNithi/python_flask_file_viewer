@@ -38,4 +38,3 @@ def directory_list(file_folder):
 
 
 # print(ff.folder_exist())
-
